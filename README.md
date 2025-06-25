@@ -1,4 +1,4 @@
-**Document Reading and Converter Tool**
+# Document Reading and Converter Tool
 
 The goal is to have a tool that can read and edit files, using Cursor or Claude Desktop.
 
@@ -10,9 +10,6 @@ The `filesystem` MCP already allows reading, writing and editing documents, but 
 To address these issues, we create:
 
 - A fresh `doc-reading-mcp` mcp service allowing for document conversions between pdf, docx and markdown.
-
-
-# Doc Reading and Converter MCP Server
 
 ## Features
 
@@ -63,7 +60,7 @@ npx @modelcontextprotocol/inspector uvx run -m doc_reading_mcp
 
 Add this to your MCP Configuration:
 
-````json
+```json
 {
     "mcpServers": {
         "doc-reading-mcp": {
