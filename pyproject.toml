@@ -1,7 +1,7 @@
 [project]
 name = "doc-reading-mcp"
-version = "0.1.0"
-description = "A simple doc reader and converter MCP service"
+version = "0.1.1"
+description = "A simple doc reader and converter MCP service to pdf, docx and markdown"
 readme = "README.md"
 authors = [
     { name = "MatiasFrydman", email = "78177534+mffrydman@users.noreply.github.com" }
