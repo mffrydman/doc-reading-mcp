@@ -1,0 +1,22 @@
+[project]
+name = "doc-reading-mcp"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "mffrydman", email = "78177534+mffrydman@users.noreply.github.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "marker-pdf==1.6.2",
+    "mcp[cli]>=1.6.0",
+    "pypandoc>=1.15",
+    "transformers==4.50.3",
+]
+
+[project.scripts]
+doc-reading-mcp = "doc_reading_mcp:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
