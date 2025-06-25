@@ -1,4 +1,4 @@
-**Use Case: Document Reading Tool**
+**Document Reading and Converter Tool**
 
 The goal is to have a tool that can read and edit files, using Cursor or Claude Desktop.
 
@@ -27,27 +27,54 @@ To address these issues, we create:
 - [pandoc] (https://pandoc.org/installing.html) installed on your system
 - [uv] (https://docs.astral.sh/uv/) for Python package management 
 
-If you were running with pip, you would:
+# Installation
 
 ```bash
-python -m venv docEnv
-source docEnv/bin/activate
-pip install .
-python -m doc_reading_mcp
+uv add doc-reading-mcp
 ```
 
-To run the package with uv:
+Or install directly from the source:
+
+```bash
+uv add git+https://github.com/mffrydman/doc-reading-mcp.git
+```
+
+# Usage
+
+## Run as a standalone server
+
+```bash
+uv run mcp install -m doc_reading_mcp
+```
+
+Or run directly:
+
 ```bash
 uv run -m doc_reading_mcp
 ```
 
-## Running the server
+## Use with MCP Inspector
 
-Run the server using the inspector:
 ```bash
-npx @modelcontextprotocol/inspector uv run -m doc_reading_mcp
+npx @modelcontextprotocol/inspector uvx run -m doc_reading_mcp
 ```
-This starts the server with the MCP Inspector UI, which is helpful for testing and debugging.
+
+## Configure in Claude Desktop, Cursor or Windsurf
+
+Add this to your MCP Configuration:
+
+````json
+{
+    "mcpServers": {
+        "doc-reading-mcp": {
+            "command": "uvx",
+            "args": [
+                "doc-reading-mcp",
+            ]
+        }
+    }
+}
+```
 
 Run in Cursor/Windsurf/Claude using the following configuration:
 ```json
@@ -63,26 +90,5 @@ Run in Cursor/Windsurf/Claude using the following configuration:
     }
 ```
 
-Replace"
+Replace
 - `/absolute/path/to/` with the actual path on your system.
-
-## Installing as a package from Github
-
-You can go much faster by using `uvx` and just running:
-```bash
-uvx git+https://github.com/mffrydman/doc-reading-mcp
-```
-to run the service.
-
-Configure your MCP client:
-````json
-{
-    "mcpServers": {
-        "doc-reading-mcp": {
-            "command": "uvx",
-            "args": [
-                "git+https://github.com/mffrydman/doc-reading-mcp",
-            ]
-        }
-    }
-}
