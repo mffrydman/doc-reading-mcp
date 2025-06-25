@@ -5,8 +5,8 @@ from mcp.server.fastmcp import FastMCP
 import pypandoc
 import sys
 
-# Create FsstMCP server instance
-mcp = FastMCP("doc-convert")
+# Create FastMCP server instance
+mcp = FastMCP("doc-reading-mcp")
 
 # Supported formats
 InputFormat = Literal["pdf", "docx", "md"]
