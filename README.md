@@ -86,4 +86,3 @@ Configure your MCP client:
         }
     }
 }
-```
